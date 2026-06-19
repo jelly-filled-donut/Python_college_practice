@@ -48,14 +48,13 @@ while True:
         for i in range(0, len(tasks)):
             print(i + 1, tasks[i][0], tasks[i][1])
         id = int (input(" Choose task to delete: "))
-        for i in range(0, len(tasks)):
-            print(i + 1, tasks[i][0], tasks[i][1])
         if id >0 and id <= len(tasks):
-            print("tasks", tasks[id-1][0], tasks[id-1][1])
+            print(" Do you want to delete task: ", tasks[id-1][0], tasks[id-1][1], "?")
             while True:
-                opt = input(" Do you want to delete task?:")
+                print("   Yes / No?   ")
+                opt = input("")
                 if opt.lower() == "y" or opt.lower() == "yes":
-                    print("task >", tasks[id-1][0], tasks[id-1][1], "< successfully deleted")
+                    print("task :", tasks[id-1][0], tasks[id-1][1], " successfully deleted")
                     del tasks[id-1]
                     break
                 elif opt.lower() == "n" or opt.lower() == "no":
@@ -75,7 +74,8 @@ while True:
     if option == 5:
         print(" Do you want to exit the program?")
         while True:
-            opt = input()
+            print("   Yes / No?   ")
+            opt = input("")
             if opt.lower() == "y" or opt.lower() == "yes":
                 print("Exiting the program.")
                 os.system("cls")
